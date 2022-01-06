@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "mMosiur",
+    "classifications": ["Console"],
+    "name": "Advent of Code Day",
+    "identity": "mMosiur.AdventOfCode.DayTemplate",
+    "shortName": "aocday",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "DayTemplate",
+    "symbols": {
+      "YearGenerator": {
+        "type": "generated",
+        "generator": "now",
+        "replaces": "YYYY",
+        "parameters": {
+          "format": "yyyy"
+        }
+      }
+    }
+  }
