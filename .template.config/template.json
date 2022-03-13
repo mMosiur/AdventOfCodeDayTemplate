@@ -1,23 +1,36 @@
 {
-    "$schema": "http://json.schemastore.org/template",
-    "author": "mMosiur",
-    "classifications": ["Console"],
-    "name": "Advent of Code Day",
-    "identity": "mMosiur.AdventOfCode.DayTemplate",
-    "shortName": "aocday",
-    "tags": {
-      "language": "C#",
-      "type": "project"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "mMosiur",
+  "classifications": [
+    "Console"
+  ],
+  "name": "Advent of Code Day",
+  "identity": "mMosiur.AdventOfCode.DayTemplate",
+  "shortName": "aocday",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "DayTemplate",
+  "symbols": {
+    "yearParameter": {
+      "type": "parameter"
     },
-    "sourceName": "DayTemplate",
-    "symbols": {
-      "YearGenerator": {
-        "type": "generated",
-        "generator": "now",
-        "replaces": "YYYY",
-        "parameters": {
-          "format": "yyyy"
-        }
+    "currentYear": {
+      "type": "generated",
+      "generator": "now",
+      "parameters": {
+        "format": "yyyy"
       }
+    },
+    "year": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "yearParameter",
+        "fallbackVariableName": "currentYear"
+      },
+      "replaces": "YYYY"
     }
   }
+}
