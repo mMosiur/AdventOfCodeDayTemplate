@@ -13,7 +13,7 @@
   },
   "sourceName": "DayTemplate",
   "symbols": {
-    "yearParameter": {
+    "year": {
       "type": "parameter"
     },
     "currentYear": {
@@ -23,11 +23,11 @@
         "format": "yyyy"
       }
     },
-    "year": {
+    "yearWithDefaultCurrentYear": {
       "type": "generated",
       "generator": "coalesce",
       "parameters": {
-        "sourceVariableName": "yearParameter",
+        "sourceVariableName": "year",
         "fallbackVariableName": "currentYear"
       },
       "replaces": "YYYY"
