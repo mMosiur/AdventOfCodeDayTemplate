@@ -48,6 +48,21 @@
         "fallbackVariableName": "currentYear"
       },
       "replaces": "YYYY"
+    },
+    "DayNumber": {
+      "type": "generated",
+      "generator": "regex",
+      "dataType": "string",
+      "replaces": "DAY_NUMBER",
+      "parameters": {
+        "source": "name",
+        "steps": [
+          {
+            "regex": "[Dd][Aa][Yy]0?",
+            "replacement": ""
+          }
+        ]
+      }
     }
   }
 }
