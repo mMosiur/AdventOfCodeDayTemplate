@@ -17,6 +17,6 @@ jobs:
     - name: Publish NuGet package
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
-        PROJECT_FILE_PATH: src/DayTemplate.csproj
+        PROJECT_FILE_PATH: DayTemplate.csproj
         NUGET_KEY: ${{ secrets.GITHUB_TOKEN }}
         NUGET_SOURCE: github
