@@ -1,0 +1,19 @@
+name: Publish package
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Publish NuGet
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: src/DayTemplate.csproj
+        NUGET_KEY: ${{ secrets.GITHUB_TOKEN }}
+        NUGET_SOURCE: github
