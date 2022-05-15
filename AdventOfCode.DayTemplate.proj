@@ -4,6 +4,7 @@
     <Authors>mMosiur</Authors>
     <Description>Template for creating an Advent of Code single day project.</Description>
     <Version>1.0.1</Version>
+    <RepositoryUrl>https://github.com/mMosiur/AdventOfCodeDayTemplate</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Label="PackageConfiguration">
