@@ -14,9 +14,9 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Create NuGet package
+      run: dotnet pack --configuration Release
     - name: Publish NuGet package
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: DayTemplate.csproj
-        NUGET_KEY: ${{ secrets.GITHUB_TOKEN }}
-        NUGET_SOURCE: github
+      run: dotnet nuget push "bin/Release/*.nupkg" --source "GitHub" --api-key "${{ secrets.GITHUB_TOKEN }}"
