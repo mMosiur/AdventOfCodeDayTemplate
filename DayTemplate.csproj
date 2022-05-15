@@ -9,13 +9,14 @@
     <Description>Template for creating an Advent of Code single day project.</Description>
     <PackageTags>dotnet-new;templates;mMosiur;aoc;aocday</PackageTags>
 
-    <TargetFramework>net6</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <NoDefaultExcludes>true</NoDefaultExcludes>
+    <RepositoryUrl>https://github.com/mMosiur/AdventOfCodeDayTemplate</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
