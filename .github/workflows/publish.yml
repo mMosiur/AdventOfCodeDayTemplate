@@ -6,17 +6,43 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
+
+  build-package:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 2.1.x
+        dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Create NuGet package
-      run: dotnet pack --configuration Release
-    - name: Publish NuGet package
-      run: dotnet nuget push "bin/Release/*.nupkg" --source "GitHub" --api-key "${{ secrets.GITHUB_TOKEN }}"
+    - name: Create package
+      run: dotnet pack --configuration Release --no-build
+    - name: Upload built package
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: package
+        path: bin/Release/mMosiur.AdventOfCode.DayTemplate.*.nupkg
+
+  publish-package-to-github:
+    needs: build-package
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download built package
+      uses: actions/download-artifact@v3.0.0
+      with:
+        name: package
+    - name: Publish package to GitHub
+      run: dotnet nuget push "mMosiur.AdventOfCode.DayTemplate.*.nupkg" --source "https://nuget.pkg.github.com/mMosiur/index.json" --api-key "${{ secrets.GITHUB_TOKEN }}" --skip-duplicate
+
+  publish-package-to-nuget:
+    needs: build-package
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download built package
+      uses: actions/download-artifact@v3.0.0
+      with:
+        name: package
+    - name: Publish package to NuGet
+      run: dotnet nuget push "mMosiur.AdventOfCode.DayTemplate.*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "${{ secrets.NUGET_API_KEY }}" --skip-duplicate
