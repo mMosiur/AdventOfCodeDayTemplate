@@ -11,7 +11,7 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "DayTemplate",
+  "sourceName": "DayXX",
   "sources": [
     {
       "source": "./",
@@ -53,7 +53,7 @@
       "type": "generated",
       "generator": "regex",
       "dataType": "string",
-      "replaces": "DAY_NUMBER",
+      "replaces": "XX",
       "parameters": {
         "source": "name",
         "steps": [
