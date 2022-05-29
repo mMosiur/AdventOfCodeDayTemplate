@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Install template
+      run: dotnet new --install .
+    - name: Create test template project
+      run: dotnet new aocday --year 2015 -o Day00
+    - name: Copy .editorconfig into created project
+      run: cp ./.editorconfig ./Day00/.editorconfig
+    - name: Check code style of created project
+      working-directory: ./Day00
+      run: dotnet format --verify-no-changes --no-restore
