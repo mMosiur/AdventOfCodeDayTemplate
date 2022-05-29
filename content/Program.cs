@@ -1,19 +1,20 @@
-using AdventOfCode.YearYYYY.DayTemplate;
-
-const string DEFAULT_INPUT_FILEPATH = "input.txt";
+using AdventOfCode.YearYYYY.DayXX;
 
 try
 {
-	string filepath = args.Length switch
+	string? filepath = args.Length switch
 	{
-		0 => DEFAULT_INPUT_FILEPATH,
+		0 => null,
 		1 => args[0],
 		_ => throw new ApplicationException(
 			$"Program was called with too many arguments. Proper usage: \"dotnet run [<input filepath>]\"."
 		)
 	};
 
-	var solver = new DayTemplateSolver(filepath);
+	var solver = new DayXXSolver(options =>
+	{
+		options.InputFilepath = filepath ?? options.InputFilepath;
+	});
 
 	Console.Write("Part 1: ");
 	string part1 = solver.SolvePart1();

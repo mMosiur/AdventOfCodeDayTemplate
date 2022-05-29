@@ -1,4 +1,4 @@
-# [Day DAY_NUMBER](https://adventofcode.com/YYYY/day/DAY_NUMBER)
+# [Day XX](https://adventofcode.com/YYYY/day/XX)
 
 ## Part One
 

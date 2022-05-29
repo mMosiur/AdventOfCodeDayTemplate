@@ -5,11 +5,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>AdventOfCode.YearYYYY.DayTemplate</RootNamespace>
+    <RootNamespace>AdventOfCode.YearYYYY.DayXX</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="mMosiur.AdventOfCode.Abstractions" Version="2.0.0" />
+    <PackageReference Include="mMosiur.AdventOfCode.Abstractions" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
