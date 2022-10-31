@@ -5,7 +5,7 @@
     <Description>Template for creating an Advent of Code single day project.</Description>
     <Version>1.2.0</Version>
     <RepositoryUrl>https://github.com/mMosiur/AdventOfCodeDayTemplate</RepositoryUrl>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Label="PackageConfiguration">
@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="content/**/*" Exclude="$(ExcludeFromPackage)" PackagePath="Content/" />
-    <None Include="LICENSE.txt" Pack="true" PackagePath=""/>
+    <Content Include="content/**/*" Exclude="$(ExcludeFromPackage)" PackagePath="Content/"/>
+    <None Include="LICENSE.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 </Project>
