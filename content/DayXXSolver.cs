@@ -22,7 +22,7 @@ public class DayXXSolver : DaySolver
 	{
 	}
 
-	public DayXXSolver() : this(new DayXXSolverOptions())
+	public DayXXSolver() : this(DayXXSolverOptions.Default)
 	{
 	}
 
