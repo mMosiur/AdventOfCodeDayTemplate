@@ -2,7 +2,7 @@ using AdventOfCode.Abstractions;
 
 namespace AdventOfCode.YearYYYY.DayXX;
 
-public class DayXXSolverOptions : DaySolverOptions
+public sealed class DayXXSolverOptions : DaySolverOptions
 {
 	public static DayXXSolverOptions Default => new();
 }

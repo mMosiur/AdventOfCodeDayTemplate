@@ -2,7 +2,7 @@ using AdventOfCode.Abstractions;
 
 namespace AdventOfCode.YearYYYY.DayXX;
 
-public class DayXXSolver : DaySolver
+public sealed class DayXXSolver : DaySolver
 {
 	public override int Year => YYYY;
 

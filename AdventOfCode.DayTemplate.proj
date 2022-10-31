@@ -3,7 +3,7 @@
     <PackageId>mMosiur.AdventOfCode.DayTemplate</PackageId>
     <Authors>mMosiur</Authors>
     <Description>Template for creating an Advent of Code single day project.</Description>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <RepositoryUrl>https://github.com/mMosiur/AdventOfCodeDayTemplate</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
