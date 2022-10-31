@@ -1,4 +1,4 @@
-# [Day XX - UNKNOWN](https://adventofcode.com/YYYY/day/XX)
+# [Day XX: UNKNOWN](https://adventofcode.com/YYYY/day/XX)
 
 ## Part One
 
