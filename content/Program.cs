@@ -1,4 +1,4 @@
-using AdventOfCode.Abstractions;
+using AdventOfCode;
 using AdventOfCode.YearYYYY.DayXX;
 
 try
@@ -7,7 +7,7 @@ try
 	{
 		0 => null,
 		1 => args[0],
-		_ => throw new DaySolverException(
+		_ => throw new CommandLineException(
 			$"Program was called with too many arguments. Proper usage: \"dotnet run [<input filepath>]\"."
 		)
 	};
@@ -28,19 +28,22 @@ try
 	string part2 = solver.SolvePart2();
 	Console.WriteLine(part2);
 }
-catch (FileNotFoundException e)
+catch (Exception e)
 {
+	string? errorPrefix = e switch
+	{
+		CommandLineException => "Command line error",
+		InputException => "Input error",
+		DaySolverException => "Day solver error",
+		_ => null
+	};
+	if (errorPrefix is null)
+	{
+		throw;
+	}
 	ConsoleColor previousColor = Console.ForegroundColor;
 	Console.ForegroundColor = ConsoleColor.Red;
-	Console.Error.WriteLine(e.Message);
-	Console.ForegroundColor = previousColor;
-	Environment.Exit(1);
-}
-catch (DaySolverException e)
-{
-	ConsoleColor previousColor = Console.ForegroundColor;
-	Console.ForegroundColor = ConsoleColor.Red;
-	Console.Error.WriteLine($"Day solver error: {e.Message}");
+	Console.Error.WriteLine($"{errorPrefix}: {e.Message}");
 	Console.ForegroundColor = previousColor;
 	Environment.Exit(1);
 }
