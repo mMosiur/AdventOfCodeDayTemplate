@@ -1,3 +1,4 @@
+using AdventOfCode.Abstractions;
 using AdventOfCode.YearYYYY.DayXX;
 
 try
@@ -6,21 +7,24 @@ try
 	{
 		0 => null,
 		1 => args[0],
-		_ => throw new ApplicationException(
+		_ => throw new DaySolverException(
 			$"Program was called with too many arguments. Proper usage: \"dotnet run [<input filepath>]\"."
 		)
 	};
 
-	var solver = new DayXXSolver(options =>
+	DayXXSolver solver = new(options =>
 	{
 		options.InputFilepath = filepath ?? options.InputFilepath;
 	});
 
-	Console.Write("Part 1: ");
+	Console.WriteLine($"Advent of Code {solver.Year}");
+	Console.WriteLine($"--- Day {solver.Day}: {solver.Title} ---");
+
+	Console.Write("Part one: ");
 	string part1 = solver.SolvePart1();
 	Console.WriteLine(part1);
 
-	Console.Write("Part 2: ");
+	Console.Write("Part two: ");
 	string part2 = solver.SolvePart2();
 	Console.WriteLine(part2);
 }
@@ -32,11 +36,11 @@ catch (FileNotFoundException e)
 	Console.ForegroundColor = previousColor;
 	Environment.Exit(1);
 }
-catch (ApplicationException e)
+catch (DaySolverException e)
 {
 	ConsoleColor previousColor = Console.ForegroundColor;
 	Console.ForegroundColor = ConsoleColor.Red;
-	Console.Error.WriteLine($"Error: {e.Message}");
+	Console.Error.WriteLine($"Day solver error: {e.Message}");
 	Console.ForegroundColor = previousColor;
 	Environment.Exit(1);
 }
