@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="mMosiur.AdventOfCode.Abstractions" Version="4.1.0" />
+    <PackageReference Include="mMosiur.AdventOfCode.Abstractions" Version="4.2.0" />
   </ItemGroup>
 
 </Project>
