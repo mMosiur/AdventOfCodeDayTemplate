@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="PackageConfiguration">
+    <TargetFramework>netstandard2.1</TargetFramework>
     <PackageType>Template</PackageType>
     <ExcludeFromPackage>
       **/bin/**;
