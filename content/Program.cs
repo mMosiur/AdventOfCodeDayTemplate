@@ -17,7 +17,6 @@ try
 		options.InputFilepath = filepath ?? options.InputFilepath;
 	});
 
-	Console.WriteLine($"Advent of Code {solver.Year}");
 	Console.WriteLine($"--- Day {solver.Day}: {solver.Title} ---");
 
 	Console.Write("Part one: ");
