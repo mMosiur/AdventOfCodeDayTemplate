@@ -5,6 +5,7 @@
     <Description>Template for creating an Advent of Code single day project.</Description>
     <Version>1.3.0</Version>
     <RepositoryUrl>https://github.com/mMosiur/AdventOfCodeDayTemplate</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
@@ -28,6 +29,7 @@
 
   <ItemGroup>
     <Content Include="content/**/*" Exclude="$(ExcludeFromPackage)" PackagePath="Content/"/>
+    <None Include="README.md" Pack="true" PackagePath=""/>
     <None Include="LICENSE.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 </Project>
