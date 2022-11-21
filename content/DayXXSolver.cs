@@ -5,9 +5,7 @@ namespace AdventOfCode.YearYYYY.DayXX;
 public sealed class DayXXSolver : DaySolver
 {
 	public override int Year => YYYY;
-
 	public override int Day => XX;
-
 	public override string Title => "UNKNOWN";
 
 	public DayXXSolver(DayXXSolverOptions options) : base(options)
