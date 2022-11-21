@@ -40,9 +40,8 @@ catch (Exception e)
 	{
 		throw;
 	}
-	ConsoleColor previousColor = Console.ForegroundColor;
 	Console.ForegroundColor = ConsoleColor.Red;
 	Console.Error.WriteLine($"{errorPrefix}: {e.Message}");
-	Console.ForegroundColor = previousColor;
+	Console.ResetColor();
 	Environment.Exit(1);
 }
