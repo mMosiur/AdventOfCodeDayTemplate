@@ -46,6 +46,12 @@
         "format": "yyyy"
       }
     },
+    "title": {
+      "type": "parameter",
+      "defaultValue": "UNKNOWN",
+      "datatype": "text",
+      "replaces": "TITLE"
+    },
     "yearWithDefaultCurrentYear": {
       "type": "generated",
       "generator": "coalesce",
@@ -55,7 +61,7 @@
       },
       "replaces": "YYYY"
     },
-    "DayNumber": {
+    "dayNumber": {
       "type": "generated",
       "generator": "regex",
       "dataType": "string",
