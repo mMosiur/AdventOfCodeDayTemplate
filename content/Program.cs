@@ -35,7 +35,7 @@ catch (AdventOfCodeException e)
 		CommandLineException => "Command line error",
 		InputException => "Input error",
 		DaySolverException => "Day solver error",
-		_ => throw new UnreachableException()
+		_ => throw new UnreachableException($"Unknown exception type \"{e.GetType()}\".")
 	};
 
 	Console.ForegroundColor = ConsoleColor.Red;
