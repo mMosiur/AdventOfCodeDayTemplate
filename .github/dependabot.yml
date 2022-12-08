@@ -6,3 +6,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+
+  # Maintain nuget dependencies
+  - package-ecosystem: "nuget"
+    directory: "/content"
+    schedule:
+      interval: "weekly"
