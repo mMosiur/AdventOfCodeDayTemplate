@@ -3,3 +3,6 @@
 # .NET Core build folders
 bin/
 obj/
+
+# Rider config folders
+.idea
