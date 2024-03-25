@@ -20,4 +20,4 @@ updates:
           - "*"
     schedule:
       interval: "weekly"
-    target-branch: "release"
+    target-branch: "staging"
