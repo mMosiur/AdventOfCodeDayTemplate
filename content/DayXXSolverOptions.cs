@@ -1,4 +1,4 @@
-using AdventOfCode.Abstractions;
+using AdventOfCode.Common;
 
 namespace AdventOfCode.YearYYYY.DayXX;
 
