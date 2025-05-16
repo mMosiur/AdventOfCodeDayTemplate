@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: [ "main", "staging" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -19,16 +19,11 @@ jobs:
       run: dotnet restore
     - name: Install template
       run: dotnet new --install .
-    - name: Create test template project
-      run: dotnet new aocday --year 2015 -o Day01
-    - name: Check if the test template project restores
-      working-directory: ./Day01
-      run: dotnet restore
-    - name: Check if the test template project builds
-      working-directory: ./Day01
-      run: dotnet build --no-restore
-    - name: Copy .editorconfig into created project
-      run: cp ./.editorconfig ./Day01/.editorconfig
-    - name: Check code style of created project
-      working-directory: ./Day01
-      run: dotnet format --verify-no-changes --no-restore
+    - name: Create and validate test project
+      run: |
+        dotnet new aocday --year 2015 --title "Test Puzzle" -o Day01
+        cp ./.editorconfig ./Day01/.editorconfig
+        cd Day01
+        dotnet restore
+        dotnet build --no-restore
+        dotnet format --verify-no-changes --no-restore
